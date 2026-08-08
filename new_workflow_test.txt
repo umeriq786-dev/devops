@@ -1,6 +1,3 @@
 This new file is added to check the workflow.
 New line added to trigger workflow.
 
-
-
-New line added to trigger workflow.
