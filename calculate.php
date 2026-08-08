@@ -3,27 +3,52 @@
 <head>
     <title>Calculation Result</title>
 </head>
+
 <body>
 
-    <h2>Result</h2>
+<h2>Calculation Result</h2>
 
-    <?php
+<?php
 
-    $num1 = $_POST['num1'];
-    $num2 = $_POST['num2'];
+$num1 = $_POST['num1'];
+$num2 = $_POST['num2'];
+$operation = $_POST['operation'];
 
-    $result = $num1 + $num2;
+switch ($operation) {
 
-    echo "First Number: " . $num1 . "<br>";
-    echo "Second Number: " . $num2 . "<br><br>";
+    case "add":
+        $result = $num1 + $num2;
+        break;
 
-    echo "Result: " . $result;
+    case "subtract":
+        $result = $num1 - $num2;
+        break;
 
-    ?>
+    case "multiply":
+        $result = $num1 * $num2;
+        break;
 
-    <br><br>
+    case "divide":
 
-    <a href="index.html">Go Back</a>
+        if ($num2 == 0) {
+            $result = "Cannot divide by zero";
+        } else {
+            $result = $num1 / $num2;
+        }
+
+        break;
+
+    default:
+        $result = "Invalid operation";
+}
+
+echo "<h3>Result: " . $result . "</h3>";
+
+?>
+
+<br>
+
+<a href="index.html">Go Back</a>
 
 </body>
 </html>
